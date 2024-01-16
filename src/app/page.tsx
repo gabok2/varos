@@ -1,113 +1,244 @@
-import Image from 'next/image'
+import { Button } from "@/components/Button";
+import { CollapsibleButton } from "@/components/CollapsibleButton";
+import { Header } from "@/components/Header";
+import { Input } from "@/components/Input";
+import { Carousel } from "@/components/Slider";
+import { SliderOne } from "@/components/SliderOne";
 
+import Image from "next/image";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <nav>
+        <Header />
+      </nav>
+      <section className="flex flex-col  pt-[72px]  md:justify-between md:flex-row md:px-6 px-4 md:pt-20 xl:px-36 xl:items-center ">
+        <div>
+          <h1 className=" max-md:text-center text-[38px] leading-10  text-[#F2F4F8] font-extrabold md:text-[50px] md:leading-[55px]">
+            Investir de forma <br /> mais inteligente <br /> passa por aqui.
+          </h1>
+          <p className="max-md:text-center text-lg text-[#E2E5EB] pt-6  leading-5 md:w-[413px]">
+            Fazemos de tudo para que você possa conquistar seus sonhos da melhor
+            forma possível.
+          </p>
+          <div className="flex pt-8 max-md:items-center max-md:justify-center ">
+            <Button.Root>
+              <Button.Background
+                backgroundColor="rgba(25, 200, 25, 0.40)"
+                between
+                radius={48}
+              >
+                <Button.Title title="Comprar agora" color="#19C819" />
+                <Button.Icon icon="arrow" height={24} width={24} />
+              </Button.Background>
+            </Button.Root>
+          </div>
+          <div className="w-[312px] md:w-[294px] xl:w-[502px] ">
+            <Carousel />
+          </div>
         </div>
+        <div className="max-md:hidden ">
+          <Image
+            className="object-contain"
+            src="/cardsHero.svg"
+            width={310}
+            height={391}
+            alt={"logo"}
+          />
+        </div>
+      </section>
+
+      <section className="flex flex-col  mt-[164px] md:mt-[104px] px-4 md:px-6 xl:px-36  xl:mt-[252px] ">
+        <h1 className=" text-2xl font-bold leading-7 text-[#F2F4F8]  text-center  md:text-start md:w-[487px] md:text-[38px] md:leading-[45px] xl:w-[608px]  ">
+          Simplifique seus investimentos e alcance seus objetivos
+        </h1>
+        <p className="text-lg leading-5 text-center text-[#B0B7BE] pt-4 md:w-[487px] md:text-start">
+          Conteúdos preparados para trazer mais segurança, independente do seu
+          nível.
+        </p>
+      </section>
+
+      <section>
+        <CollapsibleButton />
+      </section>
+
+      <section className="flex  max-md:flex-col md:px-6 px-4  xl:px-36 flex-row gap-6 lg:justify-between">
+        <div className="flex flex-col  md:pt-[200px] ">
+          <h1 className="text-[38px] leading-[36px]   font-bold text-[#F2F4F8] pt-[82px] md:px-6 px-4 max-md:text-center">
+            Didática de verdade
+          </h1>
+          <h1 className="text-lg leading-[21px] pt-2 max-md:text-center md:px-6  font-bold text-[#F2F4F8]">
+            Garantindo seu aprendizado
+          </h1>
+
+          <SliderOne />
+        </div>
+
+        <div
+          className="flex flex-col 
+         md:pt-[191px] "
+        >
+          <div className="flex max-md:items-center max-md:justify-center  md:block lg:hidden   pt-6 ">
+            <Image
+              className="object-contain"
+              src="/pessoas.svg"
+              width={358}
+              height={252}
+              alt={"logo"}
+            />
+          </div>
+
+          <div className="flex max-md:items-center max-md:justify-center   pt-6 max-sm:hidden md:hidden lg:block">
+            <Image
+              className="object-contain"
+              src="/pessoas.svg"
+              width={564}
+              height={398}
+              alt={"logo"}
+            />
+          </div>
+
+          <div className="px-4 py-4 btn-gradient  flex-row  flex md:mt-[48px]  xl:mt-[72px]  max-md:mt-[48px]">
+            <div className="flex flex-col mr-4 pb-1 lg:w-[106px] lg:h-[60px] ">
+              <p className="text-lg leading-[21px] text-center  font-bold text-[#C6CAD2]">
+                + 1000
+              </p>
+
+              <p className="text-sm leading-[16px] text-center  font-normal text-[#FAFAFA]">
+                Nota média geral das aulas
+              </p>
+            </div>
+
+            <div className="flex flex-col pb-1 lg:w-[106px] lg:h-[60px]  mr-4">
+              <p className="text-lg leading-[21px] text-center  font-bold text-[#19C819]">
+                4,8/5
+              </p>
+
+              <p className="text-sm leading-[16px] text-center   font-normal text-[#FAFAFA]">
+                Nota média geral das aulas
+              </p>
+            </div>
+
+            <div className="flex flex-col pb-1 lg:w-[106px] lg:h-[60px] ">
+              <p className="text-lg leading-[21px] text-center  font-bold text-[#C6CAD2]">
+                10k +
+              </p>
+
+              <p className="text-sm leading-[16px] text-center   font-normal text-[#FAFAFA]">
+                Comunidade
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div>
+        <Input />
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <footer className="md:px-6 xl:px-36 px-4 max-md:pt-32 md:pt-[120px] lg:pt-[128px]">
+        <div className="flex self-start flex-col md:block lg:hidden">
+          <Image src="/varosIcon.svg" width={74} height={74} alt={"logo"} />
+          <Image
+            className="pt-4"
+            src="/varosNome.svg"
+            width={74}
+            height={13}
+            alt={"logo"}
+          />
+        </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <div className="md:flex md:flex-col-reverse ">
+          <div>
+            <p className=" text-sm font-medium text-[#F2F4F8]  pt-6 md:pt-12">
+              VAROS 2023
+            </p>
+            <p className=" text-sm font-medium text-[#F2F4F8] pt-2 md:pb-14">
+              Todos os direitos reservados
+            </p>
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <div className="grid max-md:grid-rows-2 max-md:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6 max-md:pt-12  grid-cols-4 max-lg:pt-[56px]">
+            <div className="max-sm:hidden md:hidden lg:block">
+              <Image src="/varosIcon.svg" width={74} height={74} alt={"logo"} />
+              <Image
+                className="pt-4"
+                src="/varosNome.svg"
+                width={74}
+                height={13}
+                alt={"logo"}
+              />
+            </div>
+            <div className="flex flex-col">
+              <h1 className="text-lg font-bold text-[#F2F4F8]">Cursos</h1>
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Valuation do Zero ao Avançado 2.0
+              </p>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Código.py
+              </p>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Minicurso Reels
+              </p>
+
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Enciclopédia de FII
+              </p>
+            </div>
+
+            <div>
+              <h1 className="text-lg font-bold text-[#F2F4F8]">Carteiras</h1>
+
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Carteira FATOR
+              </p>
+
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Carteira Seleção
+              </p>
+
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Carteira Essencial
+              </p>
+
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Carteira Small Caps
+              </p>
+
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Carteira Dividendos
+              </p>
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Carteira Flls
+              </p>
+            </div>
+
+            <div>
+              <h1 className="text-lg font-bold text-[#F2F4F8] max-md:pt-12">
+                Sobre
+              </h1>
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Quem somos
+              </p>
+            </div>
+
+            <div>
+              <h1 className="text-lg font-bold text-[#F2F4F8] max-md:pt-12">
+                Rede Sociais
+              </h1>
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">
+                Instagram
+              </p>
+
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">Twitter</p>
+
+              <p className="text-[#F2F4F8] text-sm font-medium pt-6">Youtube</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
 }
